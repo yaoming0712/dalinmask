@@ -1,0 +1,11 @@
+訓練
+.\darknet.exe detector train data/obj.data cfg/yolov4-obj.cfg yolov4.conv.137 -mjpeg_port 8090 -map -gpu 0
+
+測圖
+.\darknet detector test data/obj.data cfg/yolov4-obj.cfg backup/yolov4-obj_final.weights
+
+測片
+.\darknet detector demo data/obj.data cfg/yolov4-obj.cfg backup/yolov4-obj_final.weights img/1.mp4 -out_filename res.avi
+
+webcam:
+.\darknet detector demo data/obj.data cfg/yolov4-obj.cfg backup/giou/yolov4-obj_best.weights -c 0
